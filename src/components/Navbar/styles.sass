@@ -1,8 +1,8 @@
 .navbar-list 
-    display: flex 
+    display: flex
     justify-content: space-between
     width: 100%
-    z-index: 2
+    position: relative
     // Search bar
     .search
         display: flex 
@@ -17,22 +17,33 @@
         display: flex 
         flex-direction: column
         align-items: center
-        background: #FFFFFF
+        background: #ffffff
         border: 1px solid rgba(0, 0, 0, 0.3)
         border-radius: 8px
         flex: 1
-        position: relative
         height: 45px
-        div
-            position: absolute
-            margin-top: 45px
-            left: 0
-            right: 0
-            h2 
-                white-space: nowrap
-                overflow: hidden
-                text-overflow: ellipsis
         button
             height: 45px
             border: none 
             border-radius: 8px
+        .drop-down-list
+            display: flex 
+            flex-direction: column
+            background: white 
+            left: 0px
+            right: 0px
+            overflow-y: overlay
+            height: 300px 
+            width: 100%
+            ul 
+                display: flex 
+                flex-direction: column
+                gap: 20px     
+            .drop-down-item
+                white-space: nowrap 
+                overflow: hidden 
+                text-overflow: ellipsis
+
+    .navbar-item.opened
+        z-index: 999
+        height: 100%

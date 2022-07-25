@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
+
+// Contex
 import DataContext from "../../contexts/DataContext";
 const FilterBySearch = () => {
   // Context
