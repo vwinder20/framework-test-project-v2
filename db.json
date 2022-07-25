@@ -1,0 +1,100 @@
+{
+  "paintings": [
+    {
+      "id": "0",
+      "name": "The Persistence of Memory",
+      "author": "Salvador Dali",
+      "created": "1931",
+      "location": "The Tate Gallery",
+      "imageUrl": "/images/painting-0.png"
+    },
+    {
+      "id": "1",
+      "name": "The Starry Night",
+      "author": "Vincent van Gogh",
+      "created": "1889",
+      "location": "Santa Maria delle Grazie",
+      "imageUrl": "/images/painting-1.png"
+    },
+    {
+      "id": "2",
+      "name": "The Flying Carpet",
+      "author": "Viktor Mikhaylovich Vasnetsov",
+      "created": "1880",
+      "location": "The Tate Gallery",
+      "imageUrl": "/images/painting-2.png"
+    },
+    {
+      "id": "3",
+      "name": "Impression, Sunrise",
+      "author": "Claude Monet",
+      "created": "1872",
+      "location": "The Tate Gallery",
+      "imageUrl": "/images/painting-3.png"
+    },
+    {
+      "id": "4",
+      "name": "The Night Watch",
+      "author": "Rembrandt van Rijn",
+      "created": "1642",
+      "location": "Santa Maria delle Grazie",
+      "imageUrl": "/images/painting-4.png"
+    },
+    {
+      "id": "5",
+      "name": "Mont Sainte-Victoire",
+      "author": "Paul Cézanne",
+      "created": "1887",
+      "location": "The Tate Gallery",
+      "imageUrl": "/images/painting-5.png"
+    },
+    {
+      "id": "6",
+      "name": "Still Life with Compote and Glass",
+      "author": "Pablo Picasso",
+      "created": "1914",
+      "location": "Santa Maria delle Grazie",
+      "imageUrl": "/images/painting-6.png"
+    },
+    {
+      "id": "7",
+      "name": "Arrangement in Grey and Black",
+      "author": "James Abbott McNeill Whistler",
+      "created": "1871",
+      "location": "The Tate Gallery",
+      "imageUrl": "/images/painting-7.png"
+    },
+    {
+      "id": "8",
+      "name": "The Last Supper",
+      "author": "Leonardo da Vinci",
+      "created": "1495-1498",
+      "location": "Santa Maria delle Grazie",
+      "imageUrl": "/images/painting-8.png"
+    },
+    {
+      "id": "9",
+      "name": "The Course of Empire",
+      "author": "Thomas Cole",
+      "created": "1833-1836",
+      "location": "The Tate Gallery",
+      "imageUrl": "/images/painting-9.png"
+    },
+    {
+      "id": "10",
+      "name": "The black Sea",
+      "author": "Ivan Aivazovsky",
+      "created": "1881",
+      "location": "Santa Maria delle Grazie",
+      "imageUrl": "/images/painting-10.png"
+    },
+    {
+      "id": "11",
+      "name": "The Swing",
+      "author": "Jean-Honoré Fragonard",
+      "created": "1767",
+      "location": "The Tate Gallery",
+      "imageUrl": "/images/painting-11.png"
+    }
+  ]
+}

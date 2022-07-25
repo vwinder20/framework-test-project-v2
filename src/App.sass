@@ -1,0 +1,28 @@
+*
+    box-sizing: border-box 
+    padding: 0
+    margin: 0
+    list-style-type: none 
+
+.App
+    max-width: 1120px
+    display: flex 
+    flex-direction: column
+    align-items: center
+    width: 100%
+    margin: 0 auto 
+    font-family: 'Roboto', sans-serif
+
+$mobile: 320px
+$tab: 768px 
+$large-tab: 1024px    
+$desktop: 1366px
+// Media queries
+@media screen and (min-width: $mobile) and (max-width: $tab - 1)
+    .navbar-list
+        flex-direction: column
+        gap: 15px
+
+@media screen and (min-width: $tab)
+    .navbar-list
+        gap: 20px
