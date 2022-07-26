@@ -6,11 +6,9 @@ import "./App.sass";
 
 // Importing components
 import Header from "./components/Header";
-// import Navbar from "./components/Navbar";
-// import Paintings from "./components/Paintings";
-
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 const Paintings = React.lazy(() => import("./components/Paintings/Paintings"));
+import Pagination from "./components/Pagination";
 
 // Context
 import DataContext from "./contexts/DataContext";
@@ -23,24 +21,21 @@ function App() {
   const fetchData = async () => {
     const response = await fetch("http://localhost:4000/paintings");
     const paintings = await response.json();
-    console.log(paintings);
     setData(paintings);
   };
   useEffect(() => {
     fetchData();
   }, []);
 
+  // Pagination
   return (
     <div className="App">
       <Header />
-
-      <Suspense fallback={<div>loading...</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Navbar currentData={!currentData.length ? data : currentData} />
-
         <Paintings currentData={!currentData.length ? data : currentData} />
       </Suspense>
-      {/* <Navbar currentData={!currentData.length ? data : currentData} />
-      <Paintings currentData={!currentData.length ? data : currentData} /> */}
+      <Pagination />
     </div>
   );
 }
