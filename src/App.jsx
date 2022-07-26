@@ -6,7 +6,7 @@ import "./App.sass";
 
 // Importing components
 import Header from "./components/Header";
-const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
+import Navbar from "./components/Navbar";
 const Paintings = React.lazy(() => import("./components/Paintings/Paintings"));
 import Pagination from "./components/Pagination";
 
@@ -31,8 +31,8 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Navbar currentData={!currentData.length ? data : currentData} />
       <Suspense fallback={<div>Loading...</div>}>
-        <Navbar currentData={!currentData.length ? data : currentData} />
         <Paintings currentData={!currentData.length ? data : currentData} />
       </Suspense>
       <Pagination />

@@ -25,7 +25,6 @@ const Pagination = () => {
     );
   }, [currentData.length, data.length]);
 
-  console.log(page);
   return (
     <div className="pagination-list">
       <div className={`${page === 1 ? " arrows-un-active" : ""}`}>
