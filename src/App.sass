@@ -12,18 +12,42 @@
     width: 100%
     margin: 0 auto 
     font-family: 'Roboto', sans-serif
-    &:nth-child(1)
-        z-index: 1
+    .two 
+        z-index: 3
 $mobile: 320px
 $tab: 768px 
 $large-tab: 1024px    
 $desktop: 1366px
 // Media queries
 @media screen and (min-width: $mobile) and (max-width: $tab - 1)
+    .paintings-list
+        grid-template-columns: 1fr
     .navbar-list
         flex-direction: column
         gap: 15px
+    .drop-down-list
+        height: 478px
+    li
+        padding: 20px 30px
+@media screen and (min-width: $tab) and (max-width: $large-tab - 1)
+    .paintings-list
+        grid-template-columns: 1fr 1fr
+    .drop-down-list
+        height: 400px
+    li
+        padding: 15px 20px
+@media screen and (min-width: $large-tab) and (max-width: $desktop - 1)
+    .drop-down-list
+        height: 400px
+    li
+        padding: 22px 20px
+@media screen and (min-width: $desktop)
+    .drop-down-list
+        height: 345px
 
+// Others queries
 @media screen and (min-width: $tab)
     .navbar-list
         gap: 20px
+    li
+        padding: 22px 20px

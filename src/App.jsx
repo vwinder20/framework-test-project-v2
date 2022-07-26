@@ -33,8 +33,10 @@ function App() {
   return (
     <div className="App">
       <Header />
+
       <Suspense fallback={<div>loading...</div>}>
         <Navbar currentData={!currentData.length ? data : currentData} />
+
         <Paintings currentData={!currentData.length ? data : currentData} />
       </Suspense>
       {/* <Navbar currentData={!currentData.length ? data : currentData} />

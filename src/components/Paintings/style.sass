@@ -1,10 +1,11 @@
 .paintings-list
-    display: flex 
+    display: flex
     gap: 20px
     flex-flow: row wrap 
     justify-content: space-between
+    margin-top: 45px
     .painting-item
-        flex: 1 1 auto
+        flex-grow: 1
         display: flex 
         position: relative
         transition: all 1s ease-in-out
@@ -20,9 +21,13 @@
             height: 30px
             border-radius: 0px 0px 20px 20px
             transition: all 0.8s ease-in-out
-            padding: 5px 0px 5px 15px
+            padding: 5px 15px 5px 15px
             .painting-title
                 font-size: 16px
+                white-space: nowrap 
+                overflow: hidden 
+                text-overflow: ellipsis
+
             .painting-subtitle
                 margin-top: 6px
                 visibility: hidden

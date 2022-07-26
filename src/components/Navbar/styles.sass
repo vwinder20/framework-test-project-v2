@@ -2,7 +2,6 @@
     display: flex
     justify-content: space-between
     width: 100%
-    position: relative
     // Search bar
     .search
         display: flex 
@@ -14,6 +13,7 @@
             padding-left: 15px
     // Navbar items 
     .navbar-item
+        position: relative
         display: flex 
         flex-direction: column
         align-items: center
@@ -21,29 +21,74 @@
         border: 1px solid rgba(0, 0, 0, 0.3)
         border-radius: 8px
         flex: 1
-        height: 45px
-        button
+        min-height: 45px
+        width: 100%
+        .button-wrapper
+            width: 100%
+            display: flex 
+            align-items: center 
+            justify-content: space-between
             height: 45px
-            border: none 
-            border-radius: 8px
+            button
+                position: relative
+                padding-left: 15px
+                margin-right: 15px
+                height: 100%
+                border: none 
+                border-radius: 8px
+                display: flex 
+                align-items: center
+                justify-content: start
+                width: 100%
+                p
+                    position: absolute
+                    white-space: nowrap 
+                    width: 100%
+                    overflow: hidden 
+                    text-overflow: ellipsis
+        
+            .options-wrapper
+                height: 100%
+                display: flex 
+                align-items: center
+                gap: 9.78px
+                margin-right: 19px
         .drop-down-list
+            margin-top: 44px
+            position: absolute
             display: flex 
             flex-direction: column
             background: white 
-            left: 0px
+            left: -1px
             right: 0px
             overflow-y: overlay
-            height: 300px 
-            width: 100%
+            width: calc( 100% + 2px )
+            z-index: 999
+            border-style: solid solid solid solid 
+            border-width: 1px 
+            border-color: rgba(0, 0, 0, 0.3) black black
+            border-radius: 0px 0px 8px 8px
+            &::-webkit-scrollbar
+                background: none
+                width: 27px
+            &::-webkit-scrollbar-thumb
+                width: 100%
+                border-radius: 9999px
+                background-color: grey
+                border: 8px solid rgba(0, 0, 0, 0)
+                background-clip: padding-box
             ul 
                 display: flex 
-                flex-direction: column
-                gap: 20px     
+                flex-direction: column     
+                li
+                    &:hover
+                        background-color: black 
+                        color: white
             .drop-down-item
                 white-space: nowrap 
                 overflow: hidden 
                 text-overflow: ellipsis
 
     .navbar-item.opened
-        z-index: 999
-        height: 100%
+        border-color: black black rgba(0, 0, 0, 0.3) black 
+        border-radius: 8px 8px 0px 0px 

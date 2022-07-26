@@ -15,22 +15,44 @@ const FilterByAuthor = () => {
   // Getting filtered array by search field
   const getFilteredData = () => {
     const newFilteredArray = data.filter((painting) => {
-      return painting.author.toLowerCase().includes(author);
+      return painting.author.includes(author);
     });
-    setCurrentData(newFilteredArray);
+    setCurrentData(author === "Author" ? data : newFilteredArray);
+    console.log(newFilteredArray);
   };
   useEffect(() => {
     getFilteredData();
   }, [author]);
 
+  // On click handler for changing current author
+  const onClickHandler = (e) => {
+    setAuthor(e.target.textContent);
+  };
   return (
     <div className={`navbar-item ${open ? " opened" : ""}`}>
-      <button onClick={() => setOpen(!open)}>{author}</button>
+      <div className="button-wrapper">
+        <button onClick={() => setOpen(!open)}>
+          <p>{author}</p>
+        </button>
+        <div className="options-wrapper">
+          <img src="/src/assets/cross.svg" alt="" />
+          <img src="/src/assets/arrow.svg" alt="" />
+        </div>
+      </div>
+
       {open ? (
         <div className="drop-down-list">
           <ul>
             {data.map((painting) => {
-              return <li className="drop-down-item">{painting.author}</li>;
+              return (
+                <li
+                  key={painting.id}
+                  className="drop-down-item"
+                  onClick={(e) => onClickHandler(e)}
+                >
+                  {painting.author}
+                </li>
+              );
             })}
           </ul>
         </div>
