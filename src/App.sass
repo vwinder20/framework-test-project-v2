@@ -4,24 +4,25 @@
     margin: 0
     list-style-type: none 
 
+#root
+    display: flex 
+    justify-content: center
+
 .App
     max-width: 1120px
     display: flex 
     flex-direction: column
     align-items: center
+    justify-content: center
     width: 100%
-    margin: 0 auto 
     font-family: 'Roboto', sans-serif
-    .two 
-        z-index: 3
+
 $mobile: 320px
 $tab: 768px 
 $large-tab: 1024px    
 $desktop: 1366px
 // Media queries
 @media screen and (min-width: $mobile) and (max-width: $tab - 1)
-    .paintings-list
-        grid-template-columns: 1fr
     .navbar-list
         flex-direction: column
         gap: 15px
@@ -29,21 +30,38 @@ $desktop: 1366px
         height: 478px
     li
         padding: 20px 30px
+    form 
+        gap: 6px
+    .App 
+        margin: 0 20px
 @media screen and (min-width: $tab) and (max-width: $large-tab - 1)
-    .paintings-list
-        grid-template-columns: 1fr 1fr
+    .App 
+        margin: 0 34px
     .drop-down-list
         height: 400px
     li
         padding: 15px 20px
+    form 
+        gap: 15px
+        flex-direction: column
+
 @media screen and (min-width: $large-tab) and (max-width: $desktop - 1)
+    .App 
+        margin: 0 42px
     .drop-down-list
         height: 400px
     li
         padding: 22px 20px
+    form 
+        gap: 15px
+        flex-direction: column
 @media screen and (min-width: $desktop)
     .drop-down-list
         height: 345px
+    form 
+        gap: 10px
+        input 
+            width: 95px
 
 // Others queries
 @media screen and (min-width: $tab)
