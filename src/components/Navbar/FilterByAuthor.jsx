@@ -18,7 +18,6 @@ const FilterByAuthor = () => {
       return painting.author.includes(author);
     });
     setCurrentData(author === "Author" ? data : newFilteredArray);
-    console.log(newFilteredArray);
   };
   useEffect(() => {
     getFilteredData();
@@ -27,6 +26,12 @@ const FilterByAuthor = () => {
   // On click handler for changing current author
   const onClickHandler = (e) => {
     setAuthor(e.target.textContent);
+    setOpen(!open);
+  };
+
+  const onClickReset = (e) => {
+    setAuthor("Author");
+    open ? setOpen(!open) : null;
   };
   return (
     <div className={`navbar-item ${open ? " opened" : ""}`}>
@@ -35,7 +40,15 @@ const FilterByAuthor = () => {
           <p>{author}</p>
         </button>
         <div className="options-wrapper">
-          <img src="/src/assets/cross.svg" alt="" />
+          {author !== "Author" ? (
+            <img
+              src="/src/assets/cross.svg"
+              alt="#"
+              onClick={() => onClickReset()}
+            />
+          ) : (
+            ""
+          )}
           <img src="/src/assets/arrow.svg" alt="" />
         </div>
       </div>

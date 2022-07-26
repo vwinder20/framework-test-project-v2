@@ -32,7 +32,6 @@
             button
                 position: relative
                 padding-left: 15px
-                margin-right: 15px
                 height: 100%
                 border: none 
                 border-radius: 8px
@@ -43,15 +42,15 @@
                 p
                     position: absolute
                     white-space: nowrap 
-                    width: 100%
+                    max-width: 100%
                     overflow: hidden 
-                    text-overflow: ellipsis
-        
+                    text-overflow: ellipsis                
             .options-wrapper
                 height: 100%
                 display: flex 
                 align-items: center
                 gap: 9.78px
+                margin-left: 20px
                 margin-right: 19px
         .drop-down-list
             margin-top: 44px
@@ -60,9 +59,8 @@
             flex-direction: column
             background: white 
             left: -1px
-            right: 0px
+            right: -1px
             overflow-y: overlay
-            width: calc( 100% + 2px )
             z-index: 999
             border-style: solid solid solid solid 
             border-width: 1px 

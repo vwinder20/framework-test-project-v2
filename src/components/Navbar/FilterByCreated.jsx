@@ -1,9 +1,58 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 
+// Contex
+import DataContext from "../../contexts/DataContext";
 const FilterByCreated = () => {
+  // Context
+  const { data, setCurrentData } = useContext(DataContext);
+
+  // Open & Close author list
+  const [open, setOpen] = useState(false);
+
+  // Getting filtered array by search field
+  const getFilteredData = () => {
+    const newFilteredArray = data.filter((painting) => {
+      return painting.location.includes(location);
+    });
+    setCurrentData(newFilteredArray);
+  };
+  useEffect(() => {
+    getFilteredData();
+  }, [location]);
+
+  // On click handler for changing current author
+  const onClickHandler = (e) => {
+    setOpen(!open);
+  };
+
   return (
-    <div className="navbar-item">
-      <button>Created</button>
+    <div className={`navbar-item ${open ? " opened" : ""}`}>
+      <div className="button-wrapper">
+        <button onClick={() => setOpen(!open)}>
+          <p>Created</p>
+        </button>
+        <div className="options-wrapper">
+          <img src="/src/assets/arrow.svg" alt="" />
+        </div>
+      </div>
+
+      {open ? (
+        <div className="drop-down-list">
+          <ul>
+            {data.map((painting) => {
+              return (
+                <li
+                  key={painting.id}
+                  className="drop-down-item"
+                  onClick={(e) => onClickHandler(e)}
+                >
+                  {painting.location}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ) : null}
     </div>
   );
 };
