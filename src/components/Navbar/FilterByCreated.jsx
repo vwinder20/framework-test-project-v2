@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import DataContext from "../../contexts/DataContext";
 const FilterByCreated = () => {
   // Context
-  const { data, setCurrentData } = useContext(DataContext);
+  const { data, setCurrentData, theme } = useContext(DataContext);
 
   // Setting hook for taking input text "from and before"
   const [from, setFrom] = useState(0);
@@ -31,7 +31,10 @@ const FilterByCreated = () => {
           <p>Created</p>
         </button>
         <div className="options-wrapper">
-          <img src="/src/assets/arrow.svg" alt="" />
+          <img
+            src={`/src/assets/${theme ? "arrow_night" : "arrow"}.svg`}
+            alt=""
+          />
         </div>
       </div>
 

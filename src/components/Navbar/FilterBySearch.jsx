@@ -21,7 +21,7 @@ const FilterBySearch = () => {
   }, [searchField]);
 
   return (
-    <div className="navbar-item search">
+    <div className="search">
       <input
         type="search"
         placeholder="Name"

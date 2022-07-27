@@ -22,6 +22,8 @@ $large-tab: 1024px
 $desktop: 1366px
 // Media queries
 @media screen and (min-width: $mobile) and (max-width: $tab - 1)
+    .App 
+        margin: 0 20px
     header 
         margin: 25px 0px
     .navbar-list
@@ -35,8 +37,10 @@ $desktop: 1366px
         padding: 20px 30px
     form 
         gap: 6px
-    .App 
-        margin: 0 20px
+    .pagination-list
+        margin-top: 30px 
+        margin-bottom: 34px 
+
 @media screen and (min-width: $tab) and (max-width: $large-tab - 1)
     .App 
         margin: 0 34px
@@ -49,7 +53,9 @@ $desktop: 1366px
     form 
         gap: 15px
         flex-direction: column
-
+    .pagination-list
+        margin-top: 35px 
+        margin-bottom: 54px
 @media screen and (min-width: $large-tab) and (max-width: $desktop - 1)
     .App 
         margin: 0 42px
@@ -60,6 +66,8 @@ $desktop: 1366px
     form 
         gap: 15px
         flex-direction: column
+    .pagination-list
+        margin-bottom: 62px
 @media screen and (min-width: $desktop)
     .drop-down-list
         height: 345px
@@ -67,6 +75,9 @@ $desktop: 1366px
         gap: 10px
         input 
             width: 95px
+    .pagination-list
+        margin-bottom: 97px
+
 
 // Others queries
 @media screen and (min-width: $tab)
@@ -79,3 +90,5 @@ $desktop: 1366px
 @media screen and (min-width: $large-tab)
     .paintings-list
         grid-template-columns: 1fr 1fr 1fr
+    .pagination-list
+        margin-top: 40px

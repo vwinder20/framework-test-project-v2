@@ -30,13 +30,21 @@ const Pagination = () => {
   }, [totalPages]);
 
   return (
-    <div className="pagination-list">
+    <div className={`pagination-list ${theme ? "night" : "day"}`}>
       <div className={`${page === 1 ? " arrows-un-active" : ""}`}>
         <a className="border-back" onClick={() => handleClickPage(1)}>
-          <img src="/src/assets/double_arrow.svg" alt="#" />
+          <img
+            src={`/src/assets/${
+              theme ? "double_arrow_night" : "double_arrow"
+            }.svg`}
+            alt="#"
+          />
         </a>
         <a onClick={() => setPage(page === 1 ? page : page - 1)}>
-          <img src="/src/assets/back.svg" alt="#" />
+          <img
+            src={`/src/assets/${theme ? "back_night" : "back"}.svg`}
+            alt="#"
+          />
         </a>
       </div>
 
@@ -52,7 +60,7 @@ const Pagination = () => {
       <div className={`${page === totalPages ? " arrows-un-active" : ""}`}>
         <a onClick={() => setPage(page === totalPages ? page : page + 1)}>
           <img
-            src="/src/assets/back.svg"
+            src={`/src/assets/${theme ? "back_night" : "back"}.svg`}
             alt="#"
             style={{ transform: "rotate(180deg)" }}
           />
@@ -62,7 +70,9 @@ const Pagination = () => {
           onClick={() => handleClickPage(totalPages)}
         >
           <img
-            src="/src/assets/double_arrow.svg"
+            src={`/src/assets/${
+              theme ? "double_arrow_night" : "double_arrow"
+            }.svg`}
             alt="#"
             style={{ transform: "rotate(180deg)" }}
           />

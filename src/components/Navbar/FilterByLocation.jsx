@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import DataContext from "../../contexts/DataContext";
 const FilterByLocation = () => {
   // Context
-  const { data, setCurrentData } = useContext(DataContext);
+  const { data, setCurrentData, theme } = useContext(DataContext);
 
   // Set author for filtering
   const [location, setLocation] = useState("Location");
@@ -42,14 +42,17 @@ const FilterByLocation = () => {
         <div className="options-wrapper">
           {location !== "Location" ? (
             <img
-              src="/src/assets/cross.svg"
+              src={`/src/assets/${theme ? "cross_night" : "cross"}.svg`}
               alt="#"
               onClick={() => onClickReset()}
             />
           ) : (
             ""
           )}
-          <img src="/src/assets/arrow.svg" alt="" />
+          <img
+            src={`/src/assets/${theme ? "arrow_night" : "arrow"}.svg`}
+            alt=""
+          />
         </div>
       </div>
 
