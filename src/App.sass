@@ -27,6 +27,8 @@ $desktop: 1366px
     .navbar-list
         flex-direction: column
         gap: 15px
+    .paintings-list
+        grid-template-columns: 1fr
     .drop-down-list
         height: 478px
     li
@@ -38,6 +40,8 @@ $desktop: 1366px
 @media screen and (min-width: $tab) and (max-width: $large-tab - 1)
     .App 
         margin: 0 34px
+    .paintings-list
+        grid-template-columns: 1fr 1fr
     .drop-down-list
         height: 400px
     li
@@ -72,3 +76,6 @@ $desktop: 1366px
         gap: 20px
     li
         padding: 22px 20px
+@media screen and (min-width: $large-tab)
+    .paintings-list
+        grid-template-columns: 1fr 1fr 1fr

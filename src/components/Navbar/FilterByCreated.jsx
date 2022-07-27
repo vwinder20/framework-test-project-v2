@@ -7,8 +7,8 @@ const FilterByCreated = () => {
   const { data, setCurrentData } = useContext(DataContext);
 
   // Setting hook for taking input text "from and before"
-  const [from, setFrom] = useState("");
-  const [before, setBefore] = useState("");
+  const [from, setFrom] = useState(0);
+  const [before, setBefore] = useState(new Date().getFullYear());
 
   // Open & Close author list
   const [open, setOpen] = useState(false);

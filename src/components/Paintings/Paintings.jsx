@@ -11,6 +11,7 @@ const Paintings = ({ currentData }) => {
     startIndex,
     startIndex + PAINTING_PER_PAGE
   );
+
   return (
     <section className="paintings-list">
       {selectedPaintings.map(

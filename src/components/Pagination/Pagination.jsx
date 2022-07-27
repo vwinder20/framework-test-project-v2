@@ -25,6 +25,10 @@ const Pagination = () => {
     );
   }, [currentData.length, data.length]);
 
+  useEffect(() => {
+    setPage(1);
+  }, [totalPages]);
+
   return (
     <div className="pagination-list">
       <div className={`${page === 1 ? " arrows-un-active" : ""}`}>
