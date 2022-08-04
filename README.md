@@ -4,9 +4,9 @@
 
 Юзайте Vite, по началу создал, потом уже оставил.
 
-- npm create vite@latest my-vite-app -- -template-react
-- npm add sass
-- npm install json-server
+- git clone
+- npm install
+
 
 ### Run the test project
 
