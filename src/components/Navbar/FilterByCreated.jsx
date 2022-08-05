@@ -10,10 +10,10 @@ const FilterByCreated = () => {
   const [from, setFrom] = useState(0);
   const [before, setBefore] = useState(new Date().getFullYear());
 
-  // Open & Close author list
+  // Open & Close created
   const [open, setOpen] = useState(false);
 
-  // Getting filtered array by search field
+  // Getting filtered array by created
   const getFilteredData = () => {
     const newFilteredArray = data.filter(({ created }) => {
       return created >= from && created <= before;

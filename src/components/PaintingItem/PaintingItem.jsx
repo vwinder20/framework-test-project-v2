@@ -2,9 +2,9 @@ import React from "react";
 import "./styles.sass";
 
 const PaintingItem = ({ paintingItem }) => {
-  const { id, name, author, location, created, imageUrl } = paintingItem;
+  const { name, author, location, created, imageUrl } = paintingItem;
   return (
-    <div className="painting-item" key={id}>
+    <div className="painting-item">
       <img src={`${imageUrl}`} alt="" />
       <div className="painting-description-container">
         <h2 className="painting-title">{name}</h2>

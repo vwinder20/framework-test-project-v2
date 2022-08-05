@@ -17,7 +17,9 @@ const PaintingsList = ({ currentData }) => {
   return (
     <section className="paintings-list">
       {selectedPaintings.map((paintingItem) => {
-        return <PaintingItem paintingItem={paintingItem} />;
+        return (
+          <PaintingItem key={paintingItem.id} paintingItem={paintingItem} />
+        );
       })}
     </section>
   );

@@ -12,7 +12,7 @@ const FilterByAuthor = () => {
   // Open & Close author list
   const [open, setOpen] = useState(false);
 
-  // Getting filtered array by search field
+  // Getting filtered array by search author
   const getFilteredData = () => {
     const newFilteredArray = data.filter((painting) => {
       return painting.author.includes(author);

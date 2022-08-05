@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 
 // Contex
 import DataContext from "../../contexts/DataContext";
@@ -6,13 +6,13 @@ const FilterByLocation = () => {
   // Context
   const { data, setCurrentData, theme } = useContext(DataContext);
 
-  // Set author for filtering
+  // Set location for filtering
   const [location, setLocation] = useState("Location");
 
-  // Open & Close author list
+  // Open & Close location list
   const [open, setOpen] = useState(false);
 
-  // Getting filtered array by search field
+  // Getting filtered array by search location
   const getFilteredData = () => {
     const newFilteredArray = data.filter((painting) => {
       return painting.location.includes(location);
@@ -23,7 +23,7 @@ const FilterByLocation = () => {
     getFilteredData();
   }, [location]);
 
-  // On click handler for changing current author
+  // On click handler for changing current location
   const onClickHandler = (e) => {
     setLocation(e.target.textContent);
     setOpen(!open);
