@@ -1,5 +1,5 @@
 // Importing hooks
-import React, { useEffect, useState, useContext, Suspense } from "react";
+import React, { useEffect, useContext, Suspense } from "react";
 
 // Importing styles
 import "./App.sass";
@@ -7,7 +7,9 @@ import "./App.sass";
 // Importing components
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
-const Paintings = React.lazy(() => import("./components/Paintings/Paintings"));
+const PaintingsList = React.lazy(() =>
+  import("./components/PaintingsList/PaintingsList")
+);
 import Pagination from "./components/Pagination";
 
 // Context
@@ -33,7 +35,7 @@ function App() {
       <Header />
       <Navbar currentData={!currentData.length ? data : currentData} />
       <Suspense fallback={<div>Loading...</div>}>
-        <Paintings currentData={!currentData.length ? data : currentData} />
+        <PaintingsList currentData={!currentData.length ? data : currentData} />
       </Suspense>
       <Pagination />
     </div>
