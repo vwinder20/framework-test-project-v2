@@ -42,6 +42,7 @@ const FilterByLocation = () => {
         <div className="options-wrapper">
           {location !== "Location" ? (
             <img
+              className="cross"
               src={`/src/assets/${theme ? "cross_night" : "cross"}.svg`}
               alt="#"
               onClick={() => onClickReset()}
@@ -49,10 +50,12 @@ const FilterByLocation = () => {
           ) : (
             ""
           )}
-          <img
-            src={`/src/assets/${theme ? "arrow_night" : "arrow"}.svg`}
-            alt=""
-          />
+          <div className="arrow" onClick={() => setOpen(!open)}>
+            <img
+              src={`/src/assets/${theme ? "arrow_night" : "arrow"}.svg`}
+              alt=""
+            />
+          </div>
         </div>
       </div>
 

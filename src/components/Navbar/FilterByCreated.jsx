@@ -31,10 +31,12 @@ const FilterByCreated = () => {
           <p>Created</p>
         </button>
         <div className="options-wrapper">
-          <img
-            src={`/src/assets/${theme ? "arrow_night" : "arrow"}.svg`}
-            alt=""
-          />
+          <div className="arrow" onClick={() => setOpen(!open)}>
+            <img
+              src={`/src/assets/${theme ? "arrow_night" : "arrow"}.svg`}
+              alt=""
+            />
+          </div>
         </div>
       </div>
 
