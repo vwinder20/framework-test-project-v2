@@ -1,4 +1,4 @@
-.navbar-list 
+.navbar__list
     display: flex
     justify-content: space-between
     width: 100%
@@ -14,17 +14,16 @@
             border-radius: 8px
 
     // Navbar items 
-    .navbar-item
+    .navbar__list-item
         position: relative
         display: flex 
         flex-direction: column
         align-items: center
-
         border-radius: 8px
         flex: 1
         max-height: 45px
         width: 100%
-        .button-wrapper
+        .item__button
             width: 100%
             display: flex 
             align-items: center 
@@ -46,7 +45,7 @@
                     max-width: 100%
                     overflow: hidden 
                     text-overflow: ellipsis                
-            .options-wrapper
+            .item-options
                 height: 100%
                 display: flex 
                 align-items: center
@@ -58,7 +57,7 @@
                     padding-left: 9.78px
                     padding-right: 19px  
                     height: 100%
-        .drop-down-list
+        .item__drop-down-list
             margin-top: 44px
             position: absolute
             display: flex 
@@ -83,11 +82,11 @@
                 display: flex 
                 flex-direction: column     
   
-            .drop-down-item
+            .drop-down-list__item
                 white-space: nowrap 
                 overflow: hidden 
                 text-overflow: ellipsis
-        .created
+        .created__drop-down-list
             position: absolute
             margin-top: 44px
             border-style: none solid solid solid
@@ -114,13 +113,12 @@
                     border-radius: 8px
                     border: none 
                     outline: none
-                .divider 
+                .drop-down-list-divider 
                     width: 12px 
                     height: 1px  
                     
 
-    .navbar-item.opened
-        
+    .navbar__list-item.opened
         border-radius: 8px 8px 0px 0px 
 
 // Day / Night theme
@@ -130,21 +128,21 @@
         border: 1px solid rgba(0, 0, 0, 0.3)
         &:focus
             border-color: black
-    .navbar-item
+    .navbar__list-item
         background: #ffffff
         border: 1px solid rgba(0, 0, 0, 0.3)
-        .button-wrapper
+        .item__button
             button
                 background: white
     .opened
         border-color: black black rgba(0, 0, 0, 0.3) black 
-    .drop-down-list
+    .item__drop-down-list
         border-color: rgba(0, 0, 0, 0.3) black black
         background: white 
-    .created
+    .created__drop-down-list
         border-color: rgba(0, 0, 0, 0.3) black black
         background: white 
-        .divider
+        .drop-down-list-divider
             background-color: black 
     li
         &:hover
@@ -155,15 +153,14 @@
         background: #0C0C0C
         border: 1px solid #FFFFFF
         color: white
-        &:hover
-    .drop-down-list
+    .item__drop-down-list
         border-color: rgba(0, 0, 0, 0.3) white white
         background: black
-    .navbar-item
+    .navbar__list-item
         background: #0C0C0C
         border: 1px solid #FFFFFF
         color: white
-        .button-wrapper
+        .item__button
             background: black
             border-radius: 8px
             button
@@ -176,8 +173,8 @@
             background-color: white
             color: black
 
-    .created
+    .created__drop-down-list
         border-color: rgba(0, 0, 0, 0.3) white white
         background: black 
-        .divider
+        .drop-down-list-divider
             background-color: white 

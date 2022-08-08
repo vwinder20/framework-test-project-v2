@@ -34,12 +34,12 @@ const FilterByLocation = () => {
     open ? setOpen(!open) : null;
   };
   return (
-    <div className={`navbar-item ${open ? " opened" : ""}`}>
-      <div className="button-wrapper">
+    <div className={`navbar__list-item ${open ? " opened" : ""}`}>
+      <div className="item__button">
         <button onClick={() => setOpen(!open)}>
           <p>{location}</p>
         </button>
-        <div className="options-wrapper">
+        <div className="item-options">
           {location !== "Location" ? (
             <img
               className="cross"
@@ -60,13 +60,13 @@ const FilterByLocation = () => {
       </div>
 
       {open ? (
-        <div className="drop-down-list">
+        <div className="item__drop-down-list">
           <ul>
             {data.map((painting) => {
               return (
                 <li
                   key={painting.id}
-                  className="drop-down-item"
+                  className="drop-down-list__item"
                   onClick={(e) => onClickHandler(e)}
                 >
                   {painting.location}

@@ -13,7 +13,7 @@ import { useContext } from "react";
 const Navbar = () => {
   const { theme } = useContext(DataContext);
   return (
-    <nav className={`navbar-list ${theme ? "night-theme" : "day-theme"}`}>
+    <nav className={`navbar__list ${theme ? "night-theme" : "day-theme"}`}>
       <FilterBySearch />
       <FilterByAuthor />
       <FilterByLocation />

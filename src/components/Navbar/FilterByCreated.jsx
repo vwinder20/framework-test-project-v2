@@ -25,12 +25,12 @@ const FilterByCreated = () => {
   }, [from, before]);
 
   return (
-    <div className={`navbar-item ${open ? " opened" : ""}`}>
-      <div className="button-wrapper">
+    <div className={`navbar__list-item ${open ? " opened" : ""}`}>
+      <div className="item__button">
         <button onClick={() => setOpen(!open)}>
           <p>Created</p>
         </button>
-        <div className="options-wrapper">
+        <div className="item-options">
           <div className="arrow" onClick={() => setOpen(!open)}>
             <img
               src={`/src/assets/${theme ? "arrow_night" : "arrow"}.svg`}
@@ -41,14 +41,14 @@ const FilterByCreated = () => {
       </div>
 
       {open ? (
-        <div className="created">
+        <div className="created__drop-down-list">
           <form>
             <input
               type="text"
               placeholder="from"
               onChange={(e) => setFrom(e.target.value)}
             />
-            <div className="divider" />
+            <div className="drop-down-list-divider" />
             <input
               type="text"
               placeholder="before"
