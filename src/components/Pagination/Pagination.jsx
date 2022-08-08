@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 
 // Importing styles
 import "./styles.sass";
@@ -17,7 +17,7 @@ const Pagination = () => {
     setPage(num);
   };
 
-  useEffect(() => {
+  useMemo(() => {
     setTotalPages(
       Math.ceil(
         (!currentData.length ? data : currentData).length / PAINTING_PER_PAGE
