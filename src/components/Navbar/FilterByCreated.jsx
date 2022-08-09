@@ -25,7 +25,7 @@ const FilterByCreated = () => {
   }, [from, before]);
 
   return (
-    <div className={`navbar__list-item ${open ? " opened" : ""}`}>
+    <div className={`navbar__list-item ${open ? "opened" : ""}`}>
       <div className="item__button">
         <button onClick={() => setOpen(!open)}>
           <p>Created</p>
@@ -40,7 +40,7 @@ const FilterByCreated = () => {
         </div>
       </div>
 
-      {open ? (
+      {open && (
         <div className="created__drop-down-list">
           <form>
             <input
@@ -56,7 +56,7 @@ const FilterByCreated = () => {
             />
           </form>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useMemo, useState } from "react";
 import DataContext from "../../contexts/DataContext";
 const FilterByLocation = () => {
   // Context
-  const { data, setCurrentData, theme } = useContext(DataContext);
+  const { data, currentData, setCurrentData, theme } = useContext(DataContext);
 
   // Set location for filtering
   const [location, setLocation] = useState("Location");
@@ -17,7 +17,7 @@ const FilterByLocation = () => {
     const newFilteredArray = data.filter((painting) => {
       return painting.location.includes(location);
     });
-    setCurrentData(location === "Location" ? data : newFilteredArray);
+    setCurrentData(location === "Location" ? [] : newFilteredArray);
   };
   useEffect(() => {
     getFilteredData();
@@ -34,7 +34,7 @@ const FilterByLocation = () => {
     open ? setOpen(!open) : null;
   };
   return (
-    <div className={`navbar__list-item ${open ? " opened" : ""}`}>
+    <div className={`navbar__list-item ${open ? "opened" : ""}`}>
       <div className="item__button">
         <button onClick={() => setOpen(!open)}>
           <p>{location}</p>
@@ -59,10 +59,10 @@ const FilterByLocation = () => {
         </div>
       </div>
 
-      {open ? (
+      {open && (
         <div className="item__drop-down-list">
           <ul>
-            {data.map((painting) => {
+            {(!currentData.length ? data : currentData).map((painting) => {
               return (
                 <li
                   key={painting.id}
@@ -75,7 +75,7 @@ const FilterByLocation = () => {
             })}
           </ul>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

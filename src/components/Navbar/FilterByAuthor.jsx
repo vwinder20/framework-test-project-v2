@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import DataContext from "../../contexts/DataContext";
 const FilterByAuthor = () => {
   // Context
-  const { data, setCurrentData, theme } = useContext(DataContext);
+  const { data, currentData, setCurrentData, theme } = useContext(DataContext);
 
   // Set author for filtering
   const [author, setAuthor] = useState("Author");
@@ -17,7 +17,7 @@ const FilterByAuthor = () => {
     const newFilteredArray = data.filter((painting) => {
       return painting.author.includes(author);
     });
-    setCurrentData(author === "Author" ? data : newFilteredArray);
+    setCurrentData(author === "Author" ? [] : newFilteredArray);
   };
   useEffect(() => {
     getFilteredData();
@@ -33,8 +33,9 @@ const FilterByAuthor = () => {
     setAuthor("Author");
     open ? setOpen(!open) : null;
   };
+
   return (
-    <div className={`navbar__list-item ${open ? " opened" : ""}`}>
+    <div className={`navbar__list-item ${open ? "opened" : ""}`}>
       <div className="item__button">
         <button onClick={() => setOpen(!open)}>
           <p>{author}</p>
@@ -59,10 +60,10 @@ const FilterByAuthor = () => {
         </div>
       </div>
 
-      {open ? (
+      {open && (
         <div className="item__drop-down-list">
           <ul>
-            {data.map((painting) => {
+            {(!currentData.length ? data : currentData).map((painting) => {
               return (
                 <li
                   key={painting.id}
@@ -75,7 +76,7 @@ const FilterByAuthor = () => {
             })}
           </ul>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };
